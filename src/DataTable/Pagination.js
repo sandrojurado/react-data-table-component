@@ -110,8 +110,8 @@ export default class Pagination extends PureComponent {
     const lastIndex = currentPage * rowsPerPage;
     const firstIndex = (lastIndex - rowsPerPage) + 1;
     const status = currentPage === numPages
-      ? `${firstIndex}-${rowCount} of ${rowCount}`
-      : `${firstIndex}-${lastIndex} of ${rowCount}`;
+      ? `${firstIndex}-${rowCount} de ${rowCount}`
+      : `${firstIndex}-${lastIndex} de ${rowCount}`;
     const disabledLesser = currentPage === 1;
     const disabledGreater = currentPage === numPages;
 
@@ -119,7 +119,7 @@ export default class Pagination extends PureComponent {
       <DataTableConsumer>
         {({ paginationPerPage, paginationRowsPerPageOptions, paginationIconLastPage, paginationIconFirstPage, paginationIconNext, paginationIconPrevious }) => (
           <React.Fragment>
-            <Span>Rows per page:</Span>
+            <Span>Filas por página:</Span>
             <Select onChange={this.handleRowsPerPage} defaultValue={paginationPerPage}>
               {paginationRowsPerPageOptions.map(num => (
                 <option
